@@ -7,7 +7,6 @@ import cv2
 import math
 import random
 import numpy as np
-
 # from generate_sentences import generate_sentences
 
 cmd_digits = {
