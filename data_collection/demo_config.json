@@ -1,0 +1,46 @@
+{
+    "tasks": ["classification", "hand_landmarks"],
+    "audio": {
+        "config": {
+            "sampling_rate": 50000,
+            "n_channels": 2,
+            "channels_of_interest": [],
+            "signal": "FMCW",
+            "tx_file": [
+                "fmcw20000_b4000_l600.wav"
+            ],
+            "frame_length": 600,
+            "sample_depth": 16,
+            "bandpass_range": [
+                [20000, 24000]
+            ]
+        },
+        "files": [
+            "FACIAL_usertest1.RAW"
+        ],
+        "syncing_poses": [
+            589176
+        ]
+    },
+    "ground_truth": {
+        "files": [
+            "record_xxx.mp4"
+        ],
+        "syncing_poses": [
+            1645007160.812109
+        ],
+        "anchor_length": 72
+    },
+    "sessions": [
+        [
+            {
+                "start": 0,
+                "duration": 630
+            },
+            {
+                "start": 630,
+                "duration": 300
+            }
+        ]
+    ]
+}
