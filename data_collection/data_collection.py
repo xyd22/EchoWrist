@@ -51,7 +51,7 @@ def get_serial_port():
 def data_record(path_prefix, output_path, cmd_set, duration, folds, n_reps_per_fold, noserial, count_down, camera, audio, right_handed):
     if not os.path.exists(os.path.join(path_prefix, output_path)):
         print('Creating path', os.path.join(path_prefix, output_path))
-        os.mkdir(os.path.join(path_prefix, output_path))
+        os.makedirs(os.path.join(path_prefix, output_path))
 
     config_path = os.path.join(path_prefix, output_path, 'config.json')
     config = load_config(config_path)
@@ -68,7 +68,7 @@ def data_record(path_prefix, output_path, cmd_set, duration, folds, n_reps_per_f
 
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-    frame_size = (1280, 720)
+    frame_size = (640, 360)
 
     n_frames = 0
     uttered_words = 0
@@ -321,7 +321,8 @@ def data_record(path_prefix, output_path, cmd_set, duration, folds, n_reps_per_f
     # for i in range(folds):
     #     fold_start_poses += [int(i * gesture_num * n_reps_per_fold)]
     #     fold_end_poses += [int((i + 1) * gesture_num * n_reps_per_fold)]
-    print("num of cmds: ", len(cmds), "gesture num: ", gesture_num, "fold start poses: ", fold_start_poses)
+    # print("num of cmds: ", len(cmds), "gesture num: ", gesture_num, "fold start poses: ", fold_start_poses)
+    print("num of cmds: ", len(cmds), "fold start poses: ", fold_start_poses)
 
     for fold_start_pos, fold_end_pos in zip(fold_start_poses, fold_end_poses):
         fold_end_pos = min(len(rcds) - 1, fold_end_pos)

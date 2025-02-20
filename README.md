@@ -5,7 +5,7 @@
 1. Change the working directory to data_collection
 
 ```bash
-cd data-collection
+cd data_collection
 ```
 
 2. Collect data
